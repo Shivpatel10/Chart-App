@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { userEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
 const ChartComponent = ({ type, data, options }) => {
@@ -7,6 +7,7 @@ const ChartComponent = ({ type, data, options }) => {
 
     useEffect(() => {
         const ctx = chartRef.current.getContext('2d');
+
         if (chartInstanceRef.current) {
             chartInstanceRef.current.destroy();
           }
@@ -15,6 +16,7 @@ const ChartComponent = ({ type, data, options }) => {
             data,
             options,
           });
+
           return () => {
             if (chartInstanceRef.current) {
               chartInstanceRef.current.destroy();
