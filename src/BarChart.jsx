@@ -1,5 +1,15 @@
 import { Chart } from "react-chartjs-2";
 
+useEffect(() => {
+    fetch('financial_data.json')
+      .then((response) => response.json())
+      .then((data) => setChartData(data));
+    }, []);
+  
+    if (!chartData) {
+      return <div>Loading...</div>;
+    }
+    
 const BarChart = ({ data }) => {
     const barChartData = {
       labels: data.months,
@@ -13,7 +23,7 @@ const BarChart = ({ data }) => {
         },
       ],
     };
-    const barChartOptions = {
+    const barChartOptions = { 
         scales: {
           y: {
             beginAtZero: true,
