@@ -1,5 +1,5 @@
 import React from "react";
-import ChartComponent from "./ChartComponent";
+import ChartComponent from "./ChartComponent";;
 
 const LineChart = ({ chartData }) => {
     const lineChartData = {

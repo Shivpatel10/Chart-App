@@ -16,15 +16,15 @@ const BubbleChart = ({ chartData }) => {
     const bubbleChartData = {
       datasets: [
         {
-          label: 'Expenses, Profits, and Sales',
+          label: 'Sales, Profits, and Expenses.',
           data: chartData?.expenses.map((expense, index) => ({
             x: expense,
             y: chartData.profits[index],
             r: scaleRadius(chartData.sales[index]), 
         })),
-          backgroundColor: 'rgba(130, 70, 109, 0.5)',
-          borderColor: 'rgba(130, 70, 109, 1)',
-          borderWidth: 1,
+        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "rgba(75, 192, 192, 1)",
+        borderWidth: 1,
         },
       ],
     };
@@ -42,7 +42,7 @@ const BubbleChart = ({ chartData }) => {
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: 'Profits',
+                    text: 'Profit',
                 },
             },
         },
