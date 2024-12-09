@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import BarChart from 'chartjs';
-//import LineChart from './components/LineChart';
-//import ScatterChart from './components/ScatterChart';
-//import BubbleChart from './components/BubbleChart';
+import LineChart from './components/LineChart';
+import ScatterChart from './components/ScatterChart';
+import BubbleChart from './components/BubbleChart';
 import './App.css'
 
 function App() {
@@ -21,8 +21,11 @@ function App() {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <h1>Dynamic Charts  Chart.js</h1>
+      <h1>Dynamic Charts with Chart.js</h1>
       <BarChart chartData={chartData} /> 
+      <LineChart chartData={chartData} />
+      <ScatterChart chartData={chartData} />
+      <BubbleChart chartData={chartData} />
     </div> 
   );
 }

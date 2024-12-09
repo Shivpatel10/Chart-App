@@ -6,7 +6,7 @@ const BarChart = ({ chartData }) => {
     labels: chartData?.months,
     datasets: [
       {
-        label: "Monthly Sales",
+        label: "Sales by Month",
         data: chartData?.sales,
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderColor: "rgba(75, 192, 192, 1)",
@@ -21,7 +21,7 @@ const BarChart = ({ chartData }) => {
         beginAtZero: true,
         title: {
           display: true,
-          text: "months",
+          text: "Month",
         },
       },
       y: {
