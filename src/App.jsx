@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import BarChart from 'chartjs';
+import React, { useState, useEffect } from 'react'
+import BarChart from './components/BarChart';
 import LineChart from './components/LineChart';
 import ScatterChart from './components/ScatterChart';
 import BubbleChart from './components/BubbleChart';
@@ -9,7 +9,7 @@ function App() {
   const [chartData, setChartData] = useState(null); // includes null data until data is fetched
 
   useEffect(() => {
-    fetch('/financial_data.json') //fetch the data from the JSON file
+    fetch('/data/financial_data.json') //fetch the data from the JSON file
       .then((response) => response.json())
       .then((data) => setChartData(data)) 
       .catch((error) => ('Error Fetching File', error))
@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div>
       <h1>Dynamic Charts with Chart.js</h1>
       <BarChart chartData={chartData} /> 
       <LineChart chartData={chartData} />
